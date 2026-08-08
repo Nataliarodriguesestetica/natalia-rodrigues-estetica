@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f7eee8" />
+  <title>Natália Rodrigues | Estética e Saúde</title>
+  <meta name="description" content="Estética, embelezamento do olhar, cuidados faciais, corporais, capilares e lábios. Natália Rodrigues Estética e Saúde." />
+  <style>
+    :root{
+      --bg:#fbf6f2;
+      --paper:#fffdfb;
+      --rose:#b86e70;
+      --rose-dark:#7b4145;
+      --gold:#b9965d;
+      --text:#392b2a;
+      --muted:#786764;
+      --line:#ead9cf;
+      --shadow:0 18px 50px rgba(85,52,45,.11);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:linear-gradient(180deg,#fffaf7 0%,#f8eee9 100%);
+      color:var(--text);
+    }
+    img,video{display:block;width:100%}
+    a{text-decoration:none;color:inherit}
+    .wrap{width:min(1120px,92vw);margin:0 auto}
+    .topbar{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter:blur(16px);
+      background:rgba(255,250,247,.86);
+      border-bottom:1px solid rgba(184,110,112,.12);
+    }
+    nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-family:Georgia,serif;font-size:1.28rem;letter-spacing:.02em}
+    .brand span{display:block;font-family:inherit;font-style:italic;color:var(--rose);font-size:.8rem}
+    .links{display:flex;align-items:center;gap:22px;font-size:.92rem}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      padding:13px 18px;border-radius:999px;font-weight:700;
+      background:linear-gradient(135deg,var(--rose-dark),var(--rose));
+      color:#fff;box-shadow:0 10px 24px rgba(123,65,69,.18)
+    }
+    .btn.secondary{background:transparent;color:var(--rose-dark);border:1px solid var(--rose)}
+    .hero{padding:56px 0 44px}
+    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:center}
+    .eyebrow{color:var(--gold);font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:.76rem}
+    h1,h2,h3{font-family:Georgia,serif;font-weight:500;line-height:1.04;margin:0}
+    h1{font-size:clamp(3rem,7vw,6.1rem);margin:12px 0 20px}
+    h1 em{color:var(--rose);font-weight:400}
+    .lead{font-size:1.08rem;line-height:1.75;color:var(--muted);max-width:620px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .portrait{
+      border-radius:32px;overflow:hidden;box-shadow:var(--shadow);
+      min-height:560px;background:#eaded5
+    }
+    .portrait img{height:100%;min-height:560px;object-fit:cover}
+    .section{padding:82px 0}
+    .section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:32px}
+    .section-head h2{font-size:clamp(2.1rem,4vw,3.7rem)}
+    .section-head p{max-width:530px;color:var(--muted);line-height:1.7;margin:0}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{
+      background:rgba(255,253,251,.9);border:1px solid var(--line);
+      border-radius:22px;padding:24px;box-shadow:0 8px 26px rgba(85,52,45,.05)
+    }
+    .card .tag{color:var(--rose);font-weight:800;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em}
+    .card h3{font-size:1.6rem;margin:10px 0}
+    .card p{color:var(--muted);line-height:1.65;margin:0}
+    .gallery{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+    .gallery-stack{display:grid;gap:18px}
+    .media{
+      overflow:hidden;border-radius:24px;background:#eee;box-shadow:var(--shadow)
+    }
+    .media img,.media video{height:100%;object-fit:cover}
+    .gallery>.media{min-height:610px}
+    .gallery-stack .media{height:296px}
+    .price-image{overflow:hidden;border-radius:28px;box-shadow:var(--shadow);background:#fff}
+    .price-image img{object-fit:contain;background:#fff}
+    .contact{
+      background:linear-gradient(135deg,#7c464a,#b86e70);
+      color:white;border-radius:32px;padding:42px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center
+    }
+    .contact h2{font-size:clamp(2rem,4vw,3.4rem);margin-bottom:12px}
+    .contact p{margin:6px 0;color:rgba(255,255,255,.88)}
+    .contact .btn{background:white;color:var(--rose-dark)}
+    footer{padding:28px 0 44px;color:var(--muted);font-size:.9rem}
+    .floating{
+      position:fixed;right:18px;bottom:18px;z-index:30;
+      width:58px;height:58px;border-radius:50%;display:grid;place-items:center;
+      background:#25D366;color:white;font-weight:900;box-shadow:0 14px 30px rgba(0,0,0,.2)
+    }
+    @media(max-width:840px){
+      .links a:not(.btn){display:none}
+      .hero-grid,.gallery,.contact{grid-template-columns:1fr}
+      .hero{padding-top:30px}
+      .portrait,.portrait img{min-height:430px}
+      .cards{grid-template-columns:1fr}
+      .section{padding:58px 0}
+      .section-head{display:block}
+      .section-head p{margin-top:14px}
+      .gallery>.media{min-height:420px}
+      .gallery-stack .media{height:240px}
+      .contact{padding:28px}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <nav>
+        <a class="brand" href="#inicio">Natália Rodrigues<span>Estética e Saúde</span></a>
+        <div class="links">
+          <a href="#servicos">Serviços</a>
+          <a href="#espaco">Espaço</a>
+          <a href="#valores">Valores</a>
+          <a class="btn" href="https://wa.me/5511940324568?text=Olá%20Natália!%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20horário." target="_blank">Agendar</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Estética • Saúde • Bem-estar</div>
+          <h1>Sua beleza,<br><em>nossa especialidade.</em></h1>
+          <p class="lead">Cuidados personalizados para valorizar sua essência com naturalidade, acolhimento e atenção aos detalhes. Procedimentos faciais, corporais, capilares, lábios e embelezamento do olhar.</p>
+          <div class="hero-actions">
+            <a class="btn" href="https://wa.me/5511940324568?text=Olá%20Natália!%20Quero%20agendar%20um%20procedimento." target="_blank">Agendar pelo WhatsApp</a>
+            <a class="btn secondary" href="https://instagram.com/nataliarodrigues_est" target="_blank">@nataliarodrigues_est</a>
+          </div>
+        </div>
+        <div class="portrait">
+          <img src="natalia.jpg" alt="Natália Rodrigues" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicos">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Tratamentos</div><h2>Cuidados pensados para você</h2></div>
+          <p>Do olhar aos tratamentos faciais e corporais, cada atendimento é planejado de acordo com sua necessidade e seus objetivos.</p>
+        </div>
+        <div class="cards">
+          <div class="card"><div class="tag">Olhar</div><h3>Cílios e sobrancelhas</h3><p>Alongamento de cílios, manutenção, design de sobrancelhas, henna, brow lamination e micropigmentação.</p></div>
+          <div class="card"><div class="tag">Facial</div><h3>Pele e rejuvenescimento</h3><p>Limpeza de pele, microagulhamento, BB Glow, radiofrequência, jato de plasma e protocolos personalizados.</p></div>
+          <div class="card"><div class="tag">Corporal</div><h3>Modelagem e bem-estar</h3><p>Protocolos para flacidez, celulite, gordura localizada e cuidados corporais sob avaliação.</p></div>
+          <div class="card"><div class="tag">Lábios</div><h3>Hidratação e definição</h3><p>HidraGloss, micropigmentação labial e retoques para realçar o contorno e a aparência dos lábios.</p></div>
+          <div class="card"><div class="tag">Capilar</div><h3>Fortalecimento capilar</h3><p>Microagulhamento capilar com ativos específicos, conforme avaliação e protocolo indicado.</p></div>
+          <div class="card"><div class="tag">Estética</div><h3>Procedimentos avançados</h3><p>Atendimentos e protocolos estéticos definidos após avaliação individual para maior segurança e personalização.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="espaco">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Nosso espaço</div><h2>Um ambiente feito para acolher</h2></div>
+          <p>Um espaço confortável e preparado para transformar o momento do procedimento em uma experiência de cuidado.</p>
+        </div>
+        <div class="gallery">
+          <div class="media"><video src="video_01.mp4" controls playsinline preload="metadata"></video></div>
+          <div class="gallery-stack">
+            <div class="media"><img src="espaco_01.jpg" alt="Espaço Natália Rodrigues" /></div>
+            <div class="media"><img src="espaco_02.jpg" alt="Detalhes do espaço" /></div>
+          </div>
+        </div>
+        <div class="gallery" style="margin-top:18px;grid-template-columns:.85fr 1.15fr">
+          <div class="gallery-stack">
+            <div class="media"><img src="espaco_03.jpg" alt="Recepção e ambiente" /></div>
+            <div class="media"><img src="espaco_04.jpg" alt="Entrada do espaço" /></div>
+          </div>
+          <div class="media"><video src="video_02.mp4" controls playsinline preload="metadata"></video></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="valores">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Serviços e valores</div><h2>Conheça nossos procedimentos</h2></div>
+          <p>Os valores podem variar conforme avaliação, necessidade do procedimento e protocolo indicado.</p>
+        </div>
+        <div class="price-image"><img src="tabela_servicos.jpg" alt="Tabela de serviços e valores" /></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap contact">
+        <div>
+          <div class="eyebrow" style="color:#f7dbc4">Agende seu horário</div>
+          <h2>Seu momento de cuidado começa aqui.</h2>
+          <p><strong>Natália Rodrigues Estética e Saúde</strong></p>
+          <p>Rua Rogério Giorgi, 327 — Sala 7</p>
+          <p>WhatsApp: (11) 94032-4568 • Instagram: @nataliarodrigues_est</p>
+        </div>
+        <a class="btn" href="https://wa.me/5511940324568?text=Olá%20Natália!%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20horário." target="_blank">Falar no WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Natália Rodrigues Estética e Saúde. Todos os direitos reservados.</div>
+  </footer>
+
+  <a class="floating" href="https://wa.me/5511940324568?text=Olá%20Natália!%20Vim%20pelo%20site." target="_blank" aria-label="WhatsApp">WA</a>
+</body>
+</html>
